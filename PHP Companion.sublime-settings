@@ -1,0 +1,7 @@
+{
+    "phpcompanion": {
+        "exclude_dir": [
+            "vendor/doctrine",
+        ]
+    }
+}

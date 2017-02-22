@@ -1,0 +1,24 @@
+<snippet>
+    <content><![CDATA[
+/**
+ * 将数组转换成csv的字符串
+ * @param \$array 需要转换的数组
+ * @param \$delimiter csv文件中的分隔符, 默认为英文逗号
+ * @param \$enclosure
+ */
+public static function convertArrayToPutcsvStr(\$array, \$delimiter = ',', \$enclosure = '"'){
+    \$fp = fopen('php://temp', 'r+');
+    fputcsv(\$fp, \$array, \$delimiter, \$enclosure);
+    rewind(\$fp);
+    \$str = fread(\$fp, 1048576);
+    fclose(\$fp);
+    return rtrim(\$str, "\n");
+}
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <!-- <tabTrigger>hello</tabTrigger> -->
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+    <tabTrigger>php-function-convertArrayToPutcsvStr</tabTrigger>
+    <scope>source.php</scope>
+</snippet>

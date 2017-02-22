@@ -1,0 +1,23 @@
+<snippet>
+    <content><![CDATA[
+/**
+ * 解码JSON字符串中的多字节Unicode字符
+ *
+ * @param string \$json 需要处理的JSON字符串
+ *
+ * @return string 解码后的json字符串
+ */
+public static function jsonUnescapedUnicode(\$json){
+    \$unescaped = preg_replace_callback('/\\\\\\\\u(\w{4})/', function (\$matches) {
+        return html_entity_decode('&#x' . \$matches[1] . ';', ENT_COMPAT, 'UTF-8');
+    }, \$json);
+    return \$unescaped;
+}
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <!-- <tabTrigger>hello</tabTrigger> -->
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+    <tabTrigger>php-function-jsonUnescapedUnicode</tabTrigger>
+    <scope>source.php</scope>
+</snippet>

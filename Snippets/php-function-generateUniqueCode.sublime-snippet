@@ -1,0 +1,20 @@
+<snippet>
+    <content><![CDATA[
+public function generateUniqueCode(){
+    \$code = null;
+
+    do {
+        \$hash = sha1(microtime(true));
+        \$code = strtoupper(substr(\$hash, mt_rand(0, 33), 6));
+    } while (\$this->isUsedCode(\$code));
+
+    return \$code;
+}
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <!-- <tabTrigger>hello</tabTrigger> -->
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+    <tabTrigger>php-function-generateUniqueCode</tabTrigger>
+    <scope>source.php</scope>
+</snippet>
