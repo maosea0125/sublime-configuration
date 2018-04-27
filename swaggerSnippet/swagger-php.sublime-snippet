@@ -1,0 +1,25 @@
+<snippet>
+    <content><![CDATA[
+/**
+ * @SWG\\${1:Method}(
+ *     path="${2:path}",
+ *     summary="${3:summary}",
+ *     tags={"${4:tags}"},
+ *     description="${3:summary}",
+ *     produces={"application/json"},
+ *     security={{"oauth2": {"scope"}}},
+ *     @SWG\Response(
+ *         response=200,
+ *         description="成功返回",
+ *         @SWG\Schema(
+ *             @SWG\Property(property="status", type="string", default="T", description="接口返回状态['T'->成功; 'F'->失败]"),
+ *         ),
+ *     )
+ * )
+ */
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>swg</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <scope>source.php</scope>
+</snippet>
